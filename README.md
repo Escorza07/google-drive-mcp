@@ -29,11 +29,22 @@ El servidor proporciona acceso a archivos de Google Drive:
 3. Proyecto en Google Cloud Platform con la API de Google Drive habilitada
 
 ### Configuración de Credenciales
-1. Configura `gcp-oauth.keys.json`
-2. Reemplaza los valores de ejemplo con tus credenciales reales:
-   - `TU_CLIENT_ID`: Tu Client ID de Google Cloud
-   - `TU_CLIENT_SECRET`: Tu Client Secret de Google Cloud
-   - `tu-project-id`: El ID de tu proyecto en Google Cloud
+
+#### Archivos de Configuración
+1. **Google Drive**:
+   - Copia `claude-desktop-config-example.json` a `claude-desktop-config.json`
+   - Reemplaza los valores de ejemplo:
+     - `TU_CLIENT_ID`: Tu Client ID de Google Cloud
+     - `TU_CLIENT_SECRET`: Tu Client Secret de Google Cloud
+     - `TU_REFRESH_TOKEN`: Tu Refresh Token de Google
+
+2. **Cline MCP**:
+   - Copia `cline-mcp-settings-example.json` a `cline-mcp-settings.json`
+   - Reemplaza los valores de ejemplo:
+     - `TU_API_TOKEN`: Tu token de API de Atlassian
+     - `tu@email.com`: Tu correo electrónico de Atlassian
+     - `TU_CLIENT_ID`: Tu Client ID de Google Cloud
+     - `TU_CLIENT_SECRET`: Tu Client Secret de Google Cloud
 
 ### Instalación
 ```bash
@@ -89,7 +100,8 @@ npm start
    ```
 
 ## Archivos Importantes
-- `gcp-oauth.keys.json`: Credenciales de Google Cloud (no subir a GitHub)
+- `claude-desktop-config.json`: Configuración de Claude Desktop (no subir a GitHub)
+- `cline-mcp-settings.json`: Configuración de Cline MCP (no subir a GitHub)
 - `.gdrive-server-credentials.json`: Tokens de autenticación (generado automáticamente)
 - `auth.js`: Script de autenticación personalizado
 
@@ -97,16 +109,16 @@ npm start
 
 ### Problemas Comunes
 1. **Error de credenciales no encontradas**
-   - Asegúrate de que `gcp-oauth.keys.json` existe en la raíz del proyecto
-   - Verifica que las credenciales sean correctas
+   - Asegúrate de que los archivos de configuración existen y tienen las credenciales correctas
+   - Verifica que los archivos no estén incluidos en el control de versiones
 
 2. **Error de autenticación**
-   - Verifica que la API de Google Drive esté habilitada en tu proyecto
-   - Asegúrate de que las URIs de redirección sean correctas
+   - Verifica que las credenciales de Google Cloud sean correctas
+   - Asegúrate de que las URLs de redirección estén configuradas correctamente en Google Cloud Console
 
-3. **Problemas en Windows**
-   - Si hay problemas con las rutas, verifica que no haya espacios en las rutas
-   - Asegúrate de que Node.js esté instalado correctamente
+3. **Error de permisos**
+   - Verifica que tu cuenta de Google tenga los permisos necesarios
+   - Asegúrate de que el proyecto en Google Cloud tenga las APIs necesarias habilitadas
 
 ## Licencia
 Este servidor MCP está licenciado bajo la Licencia MIT. Esto significa que eres libre de usar, modificar y distribuir el software, sujeto a los términos y condiciones de la Licencia MIT.
