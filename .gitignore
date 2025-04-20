@@ -1,11 +1,6 @@
 # Archivos de credenciales y configuración sensible
-gcp-oauth.keys.json
 .gdrive-server-credentials.json
 .env
-claude_desktop_config_updated.json
-cline_mcp_settings_updated.json
-cline-mcp-settings-example.json
-claude-desktop-config-example.json
 
 # Dependencias
 node_modules/

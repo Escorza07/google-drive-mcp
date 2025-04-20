@@ -28,23 +28,15 @@ El servidor proporciona acceso a archivos de Google Drive:
 2. Cuenta de Google con acceso a Google Drive
 3. Proyecto en Google Cloud Platform con la API de Google Drive habilitada
 
-### Configuración de Credenciales
-
-#### Archivos de Configuración
-1. **Google Drive**:
-   - Copia `claude-desktop-config-example.json` a `claude-desktop-config.json`
-   - Reemplaza los valores de ejemplo:
-     - `TU_CLIENT_ID`: Tu Client ID de Google Cloud
-     - `TU_CLIENT_SECRET`: Tu Client Secret de Google Cloud
-     - `TU_REFRESH_TOKEN`: Tu Refresh Token de Google
-
-2. **Cline MCP**:
-   - Copia `cline-mcp-settings-example.json` a `cline-mcp-settings.json`
-   - Reemplaza los valores de ejemplo:
-     - `TU_API_TOKEN`: Tu token de API de Atlassian
-     - `tu@email.com`: Tu correo electrónico de Atlassian
-     - `TU_CLIENT_ID`: Tu Client ID de Google Cloud
-     - `TU_CLIENT_SECRET`: Tu Client Secret de Google Cloud
+### Configuración de Google Cloud Platform
+1. Crea un proyecto en [Google Cloud Console](https://console.cloud.google.com/)
+2. Habilita la API de Google Drive
+3. Crea credenciales OAuth 2.0:
+   - Tipo de aplicación: Aplicación de escritorio
+   - Agrega las siguientes URLs de redirección:
+     - `http://localhost:3000/oauth2callback`
+     - `http://localhost:4100/code`
+4. Reemplaza las credenciales en `gcp-oauth.keys.json` con tus propias credenciales
 
 ### Instalación
 ```bash
@@ -100,8 +92,7 @@ npm start
    ```
 
 ## Archivos Importantes
-- `claude-desktop-config.json`: Configuración de Claude Desktop (no subir a GitHub)
-- `cline-mcp-settings.json`: Configuración de Cline MCP (no subir a GitHub)
+- `gcp-oauth.keys.json`: Credenciales de Google Cloud (debe estar en el repositorio)
 - `.gdrive-server-credentials.json`: Tokens de autenticación (generado automáticamente)
 - `auth.js`: Script de autenticación personalizado
 
@@ -109,8 +100,8 @@ npm start
 
 ### Problemas Comunes
 1. **Error de credenciales no encontradas**
-   - Asegúrate de que los archivos de configuración existen y tienen las credenciales correctas
-   - Verifica que los archivos no estén incluidos en el control de versiones
+   - Asegúrate de que `gcp-oauth.keys.json` existe en la raíz del proyecto
+   - Verifica que las credenciales en el archivo sean correctas
 
 2. **Error de autenticación**
    - Verifica que las credenciales de Google Cloud sean correctas
