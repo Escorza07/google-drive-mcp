@@ -29,7 +29,7 @@ El servidor proporciona acceso a archivos de Google Drive:
 3. Proyecto en Google Cloud Platform con la API de Google Drive habilitada
 
 ### Configuración de Credenciales
-1. Copia el archivo `gcp-oauth.keys.example.json` a `gcp-oauth.keys.json`
+1. Configura `gcp-oauth.keys.json`
 2. Reemplaza los valores de ejemplo con tus credenciales reales:
    - `TU_CLIENT_ID`: Tu Client ID de Google Cloud
    - `TU_CLIENT_SECRET`: Tu Client Secret de Google Cloud

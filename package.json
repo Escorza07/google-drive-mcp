@@ -13,9 +13,7 @@
   "license": "ISC",
   "description": "Servidor MCP para integración con Google Drive",
   "dependencies": {
-    "@modelcontextprotocol/server-gdrive": "^2025.1.14"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@modelcontextprotocol/server-gdrive": "^2025.1.14",
+	"cross-env": "^7.0.3"
   }
 }
