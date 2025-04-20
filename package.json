@@ -1,0 +1,21 @@
+{
+  "name": "google-drive-mcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set GDRIVE_CREDENTIALS_PATH=.gdrive-server-credentials.json&& node ./node_modules/@modelcontextprotocol/server-gdrive/dist/index.js",
+    "auth": "node auth.js",
+    "build": "npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Servidor MCP para integración con Google Drive",
+  "dependencies": {
+    "@modelcontextprotocol/server-gdrive": "^2025.1.14"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
